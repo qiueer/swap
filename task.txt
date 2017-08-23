@@ -1,0 +1,76 @@
+task_def 任务定义表
+	-- task_def_id
+	-- func
+	-- script
+	-- params
+	-- exector
+	-- task_status  0：停用；1：启用
+	-- task_type    0：系统任务；2业务任务
+	-- task_perm_status  0：独有不公开  1：所有人可读
+	-- create_user
+	-- create_dt
+	-- update_dt
+	-- note
+
+comm_task_def 常规任务，配置好，只需点击按钮
+	-- comm_task_id
+	-- task_def_id
+	-- exe_user
+	-- params
+	-- create_user
+	-- create_dt
+	-- update_dt
+	-- ips
+	-- env
+	-- hostgroup
+	-- note
+
+comm_job_def  作业定义表，由一连串任务表组合，与task_def是多对多关系
+	-- job_def_id
+	-- func
+	-- job_status  0：停用；1：启用
+	-- job_type    0：系统作业；2业务作业
+	-- job_perm_status  0：独有不公开  1：所有人可读
+	-- create_user
+	-- create_dt
+	-- update_dt
+	-- note
+	
+job_task_def  作业定义表，由一连串任务表组合，与task_def是多对多关系
+	-- job_task_def_id
+	-- job_def_id
+	-- task_def_id
+	-- create_user
+	-- create_dt
+	-- update_dt
+	-- exe_user
+	-- params
+	-- ips
+	-- env
+	-- hostgroup
+	-- note
+
+	
+==============
+task任务表
+	-- task_id
+	-- task_def_id
+	-- params  -- 可覆盖task_def表中的默认参数
+	-- fromip
+	-- ips
+	-- env
+	-- hostgroup
+	-- create_user
+	-- create_dt
+	-- status  0：失败
+	
+subtask 子任务表
+	-- subtask_id
+	-- task_id
+	-- iphost
+	-- script
+	-- exector
+	-- exe_user
+	-- create_user
+	-- create_dt
+	-- params  -- from task
