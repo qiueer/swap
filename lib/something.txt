@@ -1,0 +1,8 @@
+修改jquery_combobox.js源代码，支持select的change方法
+select: function( event, ui ) {
+    ui.item.option.selected = true;
+    that._trigger( "selected", event, {
+        item: ui.item.option
+    });
+    that.element.trigger('change');// here is the trick
+},

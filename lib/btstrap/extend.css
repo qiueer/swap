@@ -1,0 +1,27 @@
+.dlg_title
+{
+	text-align:left; 
+	font-size:18px;
+}
+
+.dlg_content
+{
+	text-align:left; 
+	font-size:16px;
+	padding: 16px;
+}
+
+.dlg_err_title
+{
+	text-align: left; 
+	font-size: 14px;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+.dlg_err_content
+{
+	text-align:left; 
+	font-size:16px;
+	padding: 16px;
+}
